@@ -1,3 +1,16 @@
 #navbar bg-body-tertiary{
     background-color: black;
 }
+.index-table{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-content: center;
+}
+
+.table{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: flex-start;
+}
