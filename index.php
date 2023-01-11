@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
-  
+
 <body>
   <header>
   <nav class="navbar navbar-light bg-light">
@@ -23,6 +23,7 @@
   </header>
       <br>
       <h1> FILE MANAGER</h1>
+      <br>
       <form method="post" action="" enctype="multipart/form-data">
         <div class="form-group">
             <label for="archvio">File</label>
@@ -31,57 +32,61 @@
         </div>
         <button type="submit" class="btn btn-primary" name="boton">Upload</button>
     </form>
-      <br>
-      <form action="php.php" method="POST" enctype="multipart/form-data">
 
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Type</th>
-            <th scope="col">Size</th>
-            <th scope="col">Date</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Files</td>
-            <td>Archives</td>
-            <td>548MB</td>
-            <td>10/01/2023</td>
-            <td class="cvDelete"><button type="button" class="btn btn-danger btn-sm deleteRow">Delete</button></td>
-            <td class="cvDelete"><button type="button" class="btn btn-warning btn-sm">Upload</button></td>
-            <td class="cvDelete"><button type="button" class="btn btn-primary btn-sm">Primary</button></button></td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Imagenes</td>
-            <td>.jpg</td>
-            <td>372MB</td>
-            <td>10/01/2023</td>
-            <td class="cvDelete"><button type="button" class="btn btn-danger btn-sm deleteRow">Delete</button></td>
-            <td class="cvDelete"><button type="button" class="btn btn-warning btn-sm">Upload</button></td>
-            <td class="cvDelete"><button type="button" class="btn btn-primary btn-sm">Primary</button></button></td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Videos</td>
-            <td>mp3</td>
-            <td>345MB</td>
-            <td>10/01/2023</td>
-            <td class="cvDelete"><button type="button" class="btn btn-danger btn-sm deleteRow">Delete</button></td>
-            <td class="cvDelete"><button type="button" class="btn btn-warning btn-sm">Upload</button></td>
-            <td class="cvDelete"><button type="button" class="btn btn-primary btn-sm">Primary</button></button></td>
-          </tr>
-        </tbody>
-      </table>
-       
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Size</th>
+                  <th scope="col">Date</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Files</td>
+                  <td>Archives</td>
+                  <td>548MB</td>
+                  <td>10/01/2023</td>
+                  <td class="cvDelete"><button type="button" class="btn btn-danger btn-sm deleteRow">Delete</button></td>
+                  <td class="cvUpload"><button type="button" type="file" name= "image" class="btn btn-warning btn-sm">Upload</button></td>
+                  <td class="cvp"><button type="button" class="btn btn-primary btn-sm">Primary</button></button></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Imagenes</td>
+                  <td>.jpg</td>
+                  <td>372MB</td>
+                  <td>10/01/2023</td>
+                  <label>
+                  <td class="cvDelete"><button type="button" class="btn btn-danger btn-sm deleteRow">Delete</button></td>
+                  </label>
+                  <label>
+                  <td class="cvUpload"><button type="button"  class="btn btn-warning btn-sm">Upload</button></td>
+                  Upload
+                  <imput type="file" name= "image">
+                  </label>
+                  <label>
+                  <td class="cvp"><button type="button" class="btn btn-primary btn-sm">Primary</button></button></td>
+                  </label>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Videos</td>
+                  <td>mp3</td>
+                  <td>345MB</td>
+                  <td>10/01/2023</td>
+                  <td class="cvDelete"><button type="button" class="btn btn-danger btn-sm deleteRow">Delete</button></td>
+                  <td class="cvUpload"><button type="button" type="file" name= "image" class="btn btn-warning btn-sm">Upload</button></td>
+                  <td class="cvp"><button type="button" class="btn btn-primary btn-sm">Primary</button></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
     </body>
-
-</html>
 
     <!-- <div class="dropdown-menu">
     <form class="px-4 py-3">
@@ -107,4 +112,30 @@
     <a class="dropdown-item" href="#">New around here? Sign up</a>
     <a class="dropdown-item" href="#">Forgot password?</a>
   </div> -->
-  </html>
+</html>
+<?php
+
+$name = $_FILES["Upload"]["name"];
+
+
+$content = $FILES ["Upload"]["tmp_name"];
+
+
+if(|file_exists("Upload")){
+    mkdir("Upload" ,0777 ,true);
+    if(move_uploaded_file($content,"root"/.$name)){
+        echo "saved";
+    }else{
+        echo "error";
+    }
+
+}
+
+}else{
+    if(move_uploaded_file($content,"root/".$name)){
+        echo "saved";
+
+    }
+
+
+?>

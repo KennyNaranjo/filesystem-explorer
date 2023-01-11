@@ -26,15 +26,10 @@ if (isset($_POST['submit'])) {
             }
 
         } else {
-            echo "There was an error uploading your file";
-        } 
-
-        } else {
             echo "You can't upload files of this type";
         } 
     
     }
-
 
 
 
