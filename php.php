@@ -1,4 +1,11 @@
 <?php
+
+
+
+
+
+
+
 print_r($_FILES);
 
 $name=$_FILES["Upload"]["name"];
