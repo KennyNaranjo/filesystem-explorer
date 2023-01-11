@@ -1,17 +1,5 @@
 <?php
-
-$image = $_FILES['image'];
-$patch = $_SERVER[''];
-var_dump($image);
-
-
-
-
-
-
-
-
-// print_r($_FILES);
+print_r($_FILES);
 
 // $name=$_FILES["Upload"]["name"];
 
