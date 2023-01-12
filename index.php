@@ -24,14 +24,18 @@
       <br>
       <h1> FILE MANAGER</h1>
       <br>
-      <form method="post" action="php.php" enctype="multipart/form-data">
+      <form method="post" action="php.php" enctype="multipart/form-data" class="form">
         <div class="form-group">
             <label for="archvio">File</label>
             <input type="file" class="form-control-file" id="archivo" aria-describedby="fileHelp" name="upload">
 
         </div>
         <button type="submit" class="btn btn-primary" name="boton">Upload</button>
-    </form>
+        </form>
+          <form method="post" action="directorio.php" >
+            <input type="text" name="crear-carpeta">
+        <button name="name-directory" type="text"><img class="create-carpet" src="carpeta-azul.jpg" width=40px height=40px hspace=150px></button>
+      </form>
 
             <table class="table">
               <thead>
@@ -52,8 +56,8 @@
                   <td>548MB</td>
                   <td>10/01/2023</td>
                   <td class="cvDelete"><button type="button" class="btn btn-danger btn-sm deleteRow">Delete</button></td>
-                  <td class="cvUpload"><button type="button" type="file" name= "image" class="btn btn-warning btn-sm">Upload</button></td>
-                  <td class="cvp"><button type="button" class="btn btn-primary btn-sm">Primary</button></button></td>
+                  <td class="cvUpload"><button type="button" type="file" name= "image" class="btn btn-warning btn-sm">Modify</button></td>
+                  <td class="cvp"><button type="button" class="btn btn-primary btn-sm">Upload</button></button></td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
@@ -65,12 +69,12 @@
                   <td class="cvDelete"><button type="button" class="btn btn-danger btn-sm deleteRow">Delete</button></td>
                   </label>
                   <label>
-                  <td class="cvUpload"><button type="button"  class="btn btn-warning btn-sm">Upload</button></td>
+                  <td class="cvUpload"><button type="button"  class="btn btn-warning btn-sm">Modify</button></td>
                   Upload
                   <imput type="file" name= "image">
                   </label>
                   <label>
-                  <td class="cvp"><button type="button" class="btn btn-primary btn-sm">Primary</button></button></td>
+                  <td class="cvp"><button type="button" class="btn btn-primary btn-sm">Upload</button></button></td>
                   </label>
                 </tr>
                 <tr>
@@ -80,12 +84,13 @@
                   <td>345MB</td>
                   <td>10/01/2023</td>
                   <td class="Delete"><button type="button" class="btn btn-danger btn-sm deleteRow">Delete</button></td>
-                  <td class="Upload"><button type="button" type="file" name= "image" class="btn btn-warning btn-sm">Upload</button></td>
-                  <td class="cvp"><button type="button" class="btn btn-primary btn-sm">Primary</button></button></td>
+                  <td class="Upload"><button type="button" type="file" name= "image" class="btn btn-warning btn-sm">Modify</button></td>
+                  <td class="cvp"><button type="button" class="btn btn-primary btn-sm">Upload</button></button></td>
                 </tr>
               </tbody>
             </table>
           </form>
+
     </body>
 
     <!-- <div class="dropdown-menu">

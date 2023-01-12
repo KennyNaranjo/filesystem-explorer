@@ -1,7 +1,7 @@
 <?php
 
-$nameDirectory = $_REQUEST["name-directory"];
-$root = './root'. $nameDirectory;
+$nameDirectory = $_REQUEST["crear-carpeta"];
+$root = './root/'. $nameDirectory;
 $documents = './root/documents/'. $nameDirectory;
 $images = './root/images/new';
 $audio = './root/audio/new';
