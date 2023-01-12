@@ -24,10 +24,10 @@
       <br>
       <h1> FILE MANAGER</h1>
       <br>
-      <form method="post" action="" enctype="multipart/form-data">
+      <form method="post" action="php.php" enctype="multipart/form-data">
         <div class="form-group">
             <label for="archvio">File</label>
-            <input type="file" class="form-control-file" id="archivo" aria-describedby="fileHelp" name="file">
+            <input type="file" class="form-control-file" id="archivo" aria-describedby="fileHelp" name="upload">
 
         </div>
         <button type="submit" class="btn btn-primary" name="boton">Upload</button>
@@ -113,29 +113,3 @@
     <a class="dropdown-item" href="#">Forgot password?</a>
   </div> -->
 </html>
-<?php
-
-$name = $_FILES["Upload"]["name"];
-
-
-$content = $FILES ["Upload"]["tmp_name"];
-
-
-if(|file_exists("Upload")){
-    mkdir("Upload" ,0777 ,true);
-    if(move_uploaded_file($content,"root"/.$name)){
-        echo "saved";
-    }else{
-        echo "error";
-    }
-
-}
-
-}else{
-    if(move_uploaded_file($content,"root/".$name)){
-        echo "saved";
-
-    }
-
-
-?>
