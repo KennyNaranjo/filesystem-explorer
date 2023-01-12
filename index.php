@@ -32,9 +32,13 @@
         </div>
         <button type="submit" class="btn btn-primary" name="boton">Upload</button>
         </form>
-          <form method="post" action="directorio.php" >
+          <form method="post" action="directorio.php">
             <input type="text" name="crear-carpeta">
-        <button name="name-directory" type="text"><img class="create-carpet" src="carpeta-azul.jpg" width=40px height=40px hspace=150px></button>
+        <button name="name-directory" type="text"><img class="create-carpet" src="carpeta-azul.jpg" width=40px height=40px></button>
+      </form>
+      <form method="post" action="delete.php" >
+            <input type="text" name="     ">
+        <button name="name-directory" type="text"><img class="delete-f" src="icons/trash-solid.svg" width=40px height=40px></button>
       </form>
 
             <table class="table">
