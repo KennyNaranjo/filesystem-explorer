@@ -79,8 +79,8 @@
                   <td>mp3</td>
                   <td>345MB</td>
                   <td>10/01/2023</td>
-                  <td class="cvDelete"><button type="button" class="btn btn-danger btn-sm deleteRow">Delete</button></td>
-                  <td class="cvUpload"><button type="button" type="file" name= "image" class="btn btn-warning btn-sm">Upload</button></td>
+                  <td class="Delete"><button type="button" class="btn btn-danger btn-sm deleteRow">Delete</button></td>
+                  <td class="Upload"><button type="button" type="file" name= "image" class="btn btn-warning btn-sm">Upload</button></td>
                   <td class="cvp"><button type="button" class="btn btn-primary btn-sm">Primary</button></button></td>
                 </tr>
               </tbody>
