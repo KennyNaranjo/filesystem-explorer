@@ -37,7 +37,7 @@
         <button name="name-directory" type="text"><img class="create-carpet" src="carpeta-azul.jpg" width=40px height=40px></button>
       </form>
       <form method="post" action="delete.php" >
-            <input type="text" name="     ">
+            <input type="text" name="delete-folder">
         <button name="name-directory" type="text"><img class="delete-f" src="icons/trash-solid.svg" width=40px height=40px></button>
       </form>
 
