@@ -35,10 +35,13 @@
           <form method="post" action="directorio.php">
             <input type="text" name="crear-carpeta">
         <button name="name-directory" type="text"><img class="create-carpet" src="carpeta-azul.jpg" width=40px height=40px></button>
+<<<<<<< HEAD
       </form>
       <form method="post" action="delete.php" >
             <input type="text" name="delete-folder">
         <button name="name-directory" type="text"><img class="delete-f" src="icons/trash-solid.svg" width=40px height=40px></button>
+=======
+>>>>>>> 4dfcc9cc89ef05d9428c3f1ed10a4395ddc1fa92
       </form>
 
             <table class="table">
