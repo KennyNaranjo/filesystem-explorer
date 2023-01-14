@@ -84,7 +84,7 @@
 
         foreach (glob("$carpeta/*") as $dir) {
 
-          if (|strpos(basename($dir), '.')) {
+          if (strpos(basename($dir), '.')) {
 
             echo "<tr>\n<th scope='row'>1</th>\n<td><form method='GET'>". basename($dir);
           }
