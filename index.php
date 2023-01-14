@@ -35,15 +35,14 @@
           <form method="post" action="directorio.php">
             <input type="text" name="crear-carpeta">
         <button name="name-directory" type="text"><img class="create-carpet" src="carpeta-azul.jpg" width=40px height=40px></button>
-<<<<<<< HEAD
       </form>
       <form method="post" action="delete.php" >
             <input type="text" name="delete-folder">
         <button name="name-directory" type="text"><img class="delete-f" src="icons/trash-solid.svg" width=40px height=40px></button>
-=======
->>>>>>> 4dfcc9cc89ef05d9428c3f1ed10a4395ddc1fa92
       </form>
 
+
+      
             <table class="table">
               <thead>
                 <tr>
@@ -55,51 +54,57 @@
                   <th></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Files</td>
-                  <td>Archives</td>
-                  <td>548MB</td>
-                  <td>10/01/2023</td>
-                  <td class="cvDelete"><button type="button" class="btn btn-danger btn-sm deleteRow">Delete</button></td>
-                  <td class="cvUpload"><button type="button" type="file" name= "image" class="btn btn-warning btn-sm">Modify</button></td>
-                  <td class="cvp"><button type="button" class="btn btn-primary btn-sm">Upload</button></button></td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Imagenes</td>
-                  <td>.jpg</td>
-                  <td>372MB</td>
-                  <td>10/01/2023</td>
-                  <label>
-                  <td class="cvDelete"><button type="button" class="btn btn-danger btn-sm deleteRow">Delete</button></td>
-                  </label>
-                  <label>
-                  <td class="cvUpload"><button type="button"  class="btn btn-warning btn-sm">Modify</button></td>
-                  Upload
-                  <imput type="file" name= "image">
-                  </label>
-                  <label>
-                  <td class="cvp"><button type="button" class="btn btn-primary btn-sm">Upload</button></button></td>
-                  </label>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Videos</td>
-                  <td>mp3</td>
-                  <td>345MB</td>
-                  <td>10/01/2023</td>
-                  <td class="Delete"><button type="button" class="btn btn-danger btn-sm deleteRow">Delete</button></td>
-                  <td class="Upload"><button type="button" type="file" name= "image" class="btn btn-warning btn-sm">Modify</button></td>
-                  <td class="cvp"><button type="button" class="btn btn-primary btn-sm">Upload</button></button></td>
-                </tr>
-              </tbody>
-            </table>
-          </form>
+             
+          
 
-    </body>
+      
+      
+      <?php
+      
+      showRequest();
 
+      function showRequest() {
+
+        $carpeta = "root/";
+
+        if (isset($_REQUEST['name'])){
+
+          $carpeta = $carpeta . $_REQUEST['name'] . "/";
+          showCarpeta($carpeta);
+
+        } else {
+
+          showCarpeta($carpeta);
+
+
+        }
+      }
+
+      function showCarpeta($carpeta){
+
+        foreach (glob("$carpeta/*") as $dir) {
+
+          if (|strpos(basename($dir), '.')) {
+
+            echo "<tr>\n<th scope='row'>1</th>\n<td><form method='GET'>". basename($dir);
+          }
+
+        }
+
+      }
+
+
+
+      
+
+      ?>
+      
+
+      </table>
+      </form>  
+      </body>
+
+/*
     <!-- <div class="dropdown-menu">
     <form class="px-4 py-3">
       <div class="mb-3">
