@@ -1,6 +1,6 @@
 <?php
 
-
+$directory = './root/';
 function buscar(){
 
     foreach (glob("root/h*") as $directory) {
