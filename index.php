@@ -42,7 +42,7 @@
       </form>
 
 
-      
+          
             <table class="table">
               <thead>
                 <tr>
@@ -60,6 +60,11 @@
       
       
       <?php
+
+      
+
+      
+
       
       showRequest();
 
@@ -70,10 +75,11 @@
         if (isset($_REQUEST['name'])){
 
           $carpeta = $carpeta . $_REQUEST['name'] . "/";
+          
           showCarpeta($carpeta);
 
         } else {
-
+          
           showCarpeta($carpeta);
 
 
@@ -81,52 +87,27 @@
       }
 
       function showCarpeta($carpeta){
-
+        
         foreach (glob("$carpeta/*") as $dir) {
 
-          if (strpos(basename($dir), '.')) {
-
-            echo "<tr>\n<th scope='row'>1</th>\n<td><form method='GET'>". basename($dir);
+          if (!strpos(basename($dir), '.')) {
+  
+            echo "<tr>\n<th scope='row'>3</th>\n<td><form method='GET'><input type='hidden' name='name' value='". basename($dir)."'class='folder'><button type='submit'>" . basename($dir) . "</button></form></td>\n<td>" . date('d-m-Y H:i:s', filectime($dir)) . "</td>\n<td>" . date('d-m-Y H:i:s', filemtime($dir)) . "</td>\n<td>" . filesize($dir) . "</td><td><button class='fa-solid fa-trash delete-btn' actual-folder='".$dir."'></button><button class='fa-regular fa-pen-to-square edit-btn'></button></td></tr>";
+  
+          } else {
+  
+            echo "<tr>\n<th scope='row'>3</th>\n<td><a href='root/" . basename($dir) . "'>" . basename($dir) . "</a></td>\n<td>" . date('d-m-Y H:i:s', filectime($dir)) . "</td>\n<td>" . date('d-m-Y H:i:s', filemtime($dir)) . "</td>\n<td>" . filesize($dir) . "</td><td><button class='fa-solid fa-trash delete-btn'></button><button class='fa-regular fa-pen-to-square edit-btn'></button></td></tr>";
           }
-
         }
-
       }
 
-
-
-      
-
-      ?>
+?>
       
 
       </table>
       </form>  
       </body>
 
-/*
-    <!-- <div class="dropdown-menu">
-    <form class="px-4 py-3">
-      <div class="mb-3">
-        <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-      </div>
-      <div class="mb-3">
-        <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-      </div>
-      <div class="mb-3">
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="dropdownCheck">
-          <label class="form-check-label" for="dropdownCheck">
-            Remember me
-          </label>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary">Sign in</button>
-    </form>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">New around here? Sign up</a>
-    <a class="dropdown-item" href="#">Forgot password?</a>
-  </div> -->
+
+  
 </html>
