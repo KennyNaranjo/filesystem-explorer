@@ -15,7 +15,7 @@
     <div class="container-fluid">
       <a class="navbar-brand">Kennyse file archive</a>
       <form class="nav-bar" method="get" action="search.php">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control me-2" name ="searchquery" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
@@ -40,7 +40,11 @@
             <input type="text" name="delete-folder">
         <button name="name-directory" type="text"><img class="delete-f" src="icons/trash-solid.svg" width=40px height=40px></button>
       </form>
-
+      <form method="post" action="modifi.php" >
+            <input type="text" name="submit">
+        <button name="name-directory" type="text"><img class="delete-f" src="carpetaplus.png" width=40px height=40px></button>
+        
+      </form>
 
           
             <table class="table">
@@ -86,7 +90,7 @@
         }
       }
 
-      function showCarpeta($carpeta){
+      function showCarpeta($carpeta){ 
         
         foreach (glob("$carpeta/*") as $dir) {
 
