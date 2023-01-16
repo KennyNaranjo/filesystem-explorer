@@ -19,7 +19,7 @@ if (!file_exists($root)) {
     die("The file $root does not exist.");
 }
 
-$f = fopen($$root, 'a+');
+$f = fopen($root, 'a+');
 if ($f) {
     
     echo 'The file ' . $filename . ' is open';
