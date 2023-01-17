@@ -9,10 +9,10 @@ foreach (glob("root/$Vale") as $directory) {
     echo $directory;
 }
 
-foreach (glob("root/*/*") as $directory) {
+foreach (glob("root//h") as $directory) {
     echo $directory;
 }
-foreach (glob("root/*/*/") as $directory) {
+foreach (glob("root///h") as $directory) {
     echo $directory;
 
 }
