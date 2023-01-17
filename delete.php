@@ -1,14 +1,11 @@
 <?php
-$deleteDirectory = $_REQUEST["delete-folder"];
-$root = './root/trash/'. $deleteDirectory;
+
+$actualFolder = $_GET["actualFolderName"];
+
+unlink($actualFolder);
+
+echo json_encode($actualFolder);
 
 
-
-rmdir('./root/'. $deleteDirectory);
-
-// unlink('./root/'. $deleteFile);
-
-
-
-
+ //unlink('./root/'. $deleteFile);
 ?>
