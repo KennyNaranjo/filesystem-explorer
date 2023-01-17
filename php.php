@@ -9,7 +9,8 @@
 
 
        if(move_uploaded_file($content,"root/documents/".$name)){
-           echo "saved";
+           header("location: index.php");
+           
        }else{
             echo"error";
        }

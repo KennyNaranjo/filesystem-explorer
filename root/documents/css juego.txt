@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("https://wallpaper.dog/large/10858613.jpg");
+    background-size: cover;
+    background-position: center;
+    
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    height: 80vh;
+    width: 20vw;
+}
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 80vh;
+    width: 70vw;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    padding: 3vw;
+  }
+
+#img1 { grid-area: img1 }
+#img2 { grid-area: img2 }
+#img3 { grid-area: img3 }
+#img4 { grid-area: img4 }
+#img5 { grid-area: img5 }
+#img6 { grid-area: img6 }
+#img7 { grid-area: img7 }
+#img8 { grid-area: img8 }
+#img9 { grid-area: img9 }
+#img10 { grid-area: img10 }
+#img11 { grid-area: img11 }
+#img12 { grid-area: img12 }
+#img13 { grid-area: img13 }
+#img14 { grid-area: img14 }
+#img15 { grid-area: img15 }
+#img16 { grid-area: img16 }
+
+.play-area {
+    display: grid;
+    grid-template-areas: 
+    'img1 img2 img3 img4'
+    'img5 img6 img7 img8'
+    'img9 img10 img11 img12'
+    'img13 img14 img15 img16';
+    gap: 10px;
+    height: 80vh;
+    width: 70vw;
+}
+
+.img-box {
+    background-size: cover;
+    background-position: center;
+}
+
+.game-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 80vh;
+    width: 70vw;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    padding: 3vw;
+  }
+
+.hidden {
+    display: none;
+}
