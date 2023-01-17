@@ -11,7 +11,7 @@ $trash = './root/trash/new';
 
 if (!file_exists($root)){
     mkdir($root, 0777, true);
-    echo "is done";
+    header("location: index.php");
 }
 
 
