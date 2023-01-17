@@ -41,7 +41,7 @@
         <button name="name-directory" type="text"><img class="delete-f" src="icons/trash-solid.svg" width=40px height=40px></button>
       </form>
       <form method="post" action="modifi.php" >
-            <input type="text" name="submit">
+            <input type="text" name="actualFolderName">
         <button name="name-directory" type="text"><img class="delete-f" src="carpetaplus.png" width=40px height=40px></button>
         
       </form>
