@@ -15,7 +15,7 @@
   <header>
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand">Kennyse file archive</a>
+      <a class="navbar-brand"><img src="WW.png" alt="" width="25%" height="20%"/></a>
       <form class="nav-bar" method="get" action="search.php">
         <input class="form-control me-2" name ="searchquery" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
