@@ -15,7 +15,7 @@
   <header>
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand"><img src="WW.png" alt="" width="25%" height="20%"/></a>
+      <a class="navbar-brand">Kennyse file archive</a>
       <form class="nav-bar" method="get" action="search.php">
         <input class="form-control me-2" name ="searchquery" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
@@ -37,6 +37,10 @@
           <form method="post" action="directorio.php">
             <input type="text" name="crear-carpeta">
         <button name="name-directory" type="text"><img class="create-carpet" src="carpeta-azul.jpg" width=40px height=40px></button>
+      </form>
+      <form method="post" action="delete.php" >
+            <input type="text" name="delete-folder">
+        <button name="name-directory" type="text"><img class="delete-f" src="icons/trash-solid.svg" width=40px height=40px></button>
       </form>
       <form method="post" action="modifi.php" >
             <input type="text" name="actualFolderName">
@@ -96,11 +100,11 @@
           if (!strpos(basename($dir), '.')) {
             
   
-            echo "<tr>\n<th scope='row'>3</th>\n<td><form method='GET'><input type='hidden' name='name' value='". basename($dir)."'class='folder'><button type='submit'>" . basename($dir) . "</button></form></td>\n<td>" . date('d-m-Y H:i:s', filectime($dir)) . "</td>\n<td>" . pathinfo($dir, PATHINFO_EXTENSION) . "</td>\n<td>" . filesize($dir) . "</td><td><button id='delete-btn' name ='delete-file' class='fa-solid fa-trash delete-btn'></button><button class='fa-regular fa-pen-to-square edit-btn'></button></td></tr>";
+            echo "<tr>\n<th scope='row'>3</th>\n<td><form method='GET'><input type='hidden' name='name' value='". basename($dir)."'class='folder'><button type='submit'>" . basename($dir) . "</button></form></td>\n<td>" . date('d-m-Y H:i:s', filectime($dir)) . "</td>\n<td>" . pathinfo($dir, PATHINFO_EXTENSION) . "</td>\n<td>" . filesize($dir) . "</td><td><button actual-folder='".$dir."' id='delete-btn' name ='delete-file' class='fa-solid fa-trash delete-btn' actual-folder='".$dir."'></button><button class='fa-regular fa-pen-to-square edit-btn'></button></td></tr>";
   
           } else {
   
-            echo "<tr>\n<th scope='row'>3</th>\n<td><a href='root/" . basename($dir) . "'>" . basename($dir) . "</a></td>\n<td>" . date('d-m-Y H:i:s', filectime($dir)) . "</td>\n<td>" . pathinfo($dir, PATHINFO_EXTENSION) . "</td>\n<td>" . filesize($dir) . "</td><td><button id='delete-btn' class='fa-solid fa-trash delete-btn' actual-folder='".$dir."'></button><button  class='fa-regular fa-pen-to-square edit-btn'></button></td></tr>";
+            echo "<tr>\n<th scope='row'>3</th>\n<td><a href='root/" . basename($dir) . "'>" . basename($dir) . "</a></td>\n<td>" . date('d-m-Y H:i:s', filectime($dir)) . "</td>\n<td>" . pathinfo($dir, PATHINFO_EXTENSION) . "</td>\n<td>" . filesize($dir) . "</td><td><button id='delete-btn' class='fa-solid fa-trash delete-btn'></button><button  class='fa-regular fa-pen-to-square edit-btn'></button></td></tr>";
           }
         }
       }
